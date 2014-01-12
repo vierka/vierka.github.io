@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Programovanie s JavaScriptom</title>
+  </head>
+  <body>
+  <noscript>
+  Tento súbor obsahuje program.<br />
+  Na spustenie programu je potrebný <b>JavaScript</b>; povoľte ho, prosím.
+  </noscript>
+    <script>
+     
+      // ***********************************************************************
+      // Animácia. Panáčik sa po kliknutí súvisle bezdôvodne usmieva, 
+      // až kým ho zastavíš kliknutím.
+      // ***********************************************************************
+      function panacik() {
+        if(typeof timer=='undefined'){
+          timer = setInterval(function(){
+            i = Math.random() * 30;
+            j = -2 + Math.random() * 4;
+            k = -2 + Math.random() * 4;
+            document.getElementById("usmev").setAttribute("d", "M 80 60 q 20 " + i + " 40 0");
+            document.getElementById("okoa").setAttribute("cx", 110 + j);
+            document.getElementById("okob").setAttribute("cx", 90 + j);
+			document.getElementById("okoa").setAttribute("cy", 40 + k);
+            document.getElementById("okob").setAttribute("cy", 40 + k);
+          },250);
+          
+        }
+        else{
+          clearInterval(timer);
+          timer=undefined;
+        }
+        
+      }
+      // ***********************************************************************
+    </script>
+    <a href="#" onclick="panacik()">
+    <!-- Nakreslenie panáčika -->
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="200px" width="200px">
+        <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="yellow" />
+        <circle cx="100" cy="140" r="50" stroke="black" stroke-width="2" fill="yellow" />
+        <circle cx="110" cy="40" r="5" stroke="black" stroke-width="2" fill="white" />
+        <circle cx="90" cy="40" r="5" stroke="black" stroke-width="2" fill="white" />
+        <circle id="okoa" cx="110" cy="42.5" r="2.5" stroke="black" stroke-width="0" fill="black" />
+        <circle id="okob" cx="90" cy="42.5" r="2.5" stroke="black" stroke-width="0" fill="black" />
+        <path id="usmev" d="M 80 60 q 20 0 40 0" stroke="red"
+          stroke-width="5" fill="none" />
+        <text x="100" y="130" dx="-35" dy="10">click on me</text>
+      </svg> 
+    </a>
+  </body>
+</html>
