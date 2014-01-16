@@ -36,8 +36,8 @@
         
       }
       // ***********************************************************************
-    </script>
-    <a href="#" onclick="panacik()">
+	</script>
+    <a href="#" onclick="panacik(); return false;">
     <!-- Nakreslenie panáčika -->
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="200px" width="200px">
         <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="yellow" />
@@ -50,8 +50,22 @@
           stroke-width="2px" fill="none" />
         <text x="100" y="130" dx="-35" dy="10">click on me</text>
       </svg>
+    </a>
       <!-- Nakreslenie slniecka -->
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="200px" width="400px">
+      <svg id="slniečko" xmlns="http://www.w3.org/2000/svg" version="1.1" height="200px" width="400px">
+		<!-- Nakreslenie lúčov -->
+		<!-- line x1="100" y1="50" x2="180" y2="50" stroke="black" -->
+		<script>
+			var luc = document.createElementNS("http://www.w3.org/2000/svg", "line");
+			var slniecko = document.getElementById("slniečko");
+			slniecko.appendChild(luc);
+			//alert("test");
+			luc.setAttribute("x1",100);
+			luc.setAttribute("y1",50);
+			luc.setAttribute("x2",180);
+			luc.setAttribute("y2",50);
+			luc.setAttribute("style","stroke:yellow;stroke-width:2");
+		</script>
         <circle cx="100" cy="50" r="40" stroke="yellow" stroke-width="2" fill="yellow" />
         <circle cx="110" cy="40" r="5" stroke="black" stroke-width="2" fill="white" />
         <circle cx="90" cy="40" r="5" stroke="black" stroke-width="2" fill="white" />
@@ -61,6 +75,5 @@
           stroke-width="2px" fill="none" />
       </svg>
       
-    </a>
   </body>
 </html>
