@@ -56,15 +56,19 @@
 		<!-- Nakreslenie lúčov -->
 		<!-- line x1="100" y1="50" x2="180" y2="50" stroke="black" -->
 		<script>
-			var luc = document.createElementNS("http://www.w3.org/2000/svg", "line");
 			var slniecko = document.getElementById("slniečko");
-			slniecko.appendChild(luc);
-			//alert("test");
-			luc.setAttribute("x1",100);
-			luc.setAttribute("y1",50);
-			luc.setAttribute("x2",180);
-			luc.setAttribute("y2",50);
-			luc.setAttribute("style","stroke:yellow;stroke-width:2");
+			var center_x = 100;
+			var center_y = 50;
+			var pocet = 82;
+			for (i=0; i < pocet; i++) {
+				var luc = document.createElementNS("http://www.w3.org/2000/svg", "line");
+				slniecko.appendChild(luc);
+				luc.setAttribute("x1",center_x);
+				luc.setAttribute("y1",center_y);
+				luc.setAttribute("x2",center_x+80*Math.cos(i*(2*Math.PI/pocet)));
+				luc.setAttribute("y2",center_y+80*Math.sin(i*(2*Math.PI/pocet)));
+				luc.setAttribute("style","stroke:yellow;stroke-width:2");
+			}
 		</script>
         <circle cx="100" cy="50" r="40" stroke="yellow" stroke-width="2" fill="yellow" />
         <circle cx="110" cy="40" r="5" stroke="black" stroke-width="2" fill="white" />
