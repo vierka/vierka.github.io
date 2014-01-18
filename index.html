@@ -62,6 +62,13 @@
 			var pocet = 50;
 			var dlzka_luca = 55;
 			for (i=0; i < pocet; i++) {
+				if ((i % 2) == 0) {
+					dlzka_luca = 55;
+				}
+				else {
+					dlzka_luca = 45;
+				}
+				
 				var luc = document.createElementNS("http://www.w3.org/2000/svg", "line");
 				slniecko.appendChild(luc);
 				luc.setAttribute("x1",center_x);
