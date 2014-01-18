@@ -59,7 +59,7 @@
 			var slniecko = document.getElementById("slniečko");
 			var center_x = 100;
 			var center_y = 50;
-			var pocet = 50;
+			var pocet = 54;
 			var dlzka_luca = 55;
 			for (i=0; i < pocet; i++) {
 				if ((i % 2) == 0) {
@@ -75,7 +75,12 @@
 				luc.setAttribute("y1",center_y);
 				luc.setAttribute("x2",center_x+dlzka_luca*Math.cos(i*(2*Math.PI/pocet)));
 				luc.setAttribute("y2",center_y+dlzka_luca*Math.sin(i*(2*Math.PI/pocet)));
+				if ((i%3) == 0) {
+				luc.setAttribute("style","stroke:rgb(250,180,180);stroke-width:1");
+				}
+				else {
 				luc.setAttribute("style","stroke:rgb(250,240,0);stroke-width:1");
+				}
 			}
 		</script>
         <circle cx="100" cy="50" r="35" stroke="yellow" stroke-width="2" fill="yellow" />
